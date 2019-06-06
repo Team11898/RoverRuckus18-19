@@ -13,7 +13,7 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
     public DcMotor rightBack;   // its for wiring, like so u know how many motors are being used
     public DcMotor leftBack;   // and like how many servos
     public DcMotor collection;      // just a routine, no code to learn here :)
-    public Servo flip;
+    public Servo servo;
 
     @Override
     public void init() {
@@ -21,7 +21,7 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
         leftBack = hardwareMap.dcMotor.get("leftBack");
        
         collection = hardwareMap.dcMotor.get("collection");
-        flip = hardwareMap.servo.get("flip");
+        servo = hardwareMap.servo.get("servo");
     
     @Override
     public void start(){}
@@ -40,10 +40,10 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
         collection.setPower(gamepad2.right_stick_y*-.9);
     
     if(gamepad2.a){
-        flip.setPosition(1);
+        servo.setPosition(1);
     }
     if(gamepad2.x){
-        flip.setPosition(0);
+        servo.setPosition(0);
     }
     }
 
