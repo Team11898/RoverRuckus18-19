@@ -21,7 +21,7 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
         leftBack = hardwareMap.dcMotor.get("leftBack");
        
         collection = hardwareMap.dcMotor.get("collection");
-        flip = hardwareMap.Servo.get("flip");
+        flip = hardwareMap.servo.get("flip");
     
     @Override
     public void start(){}
@@ -38,6 +38,13 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
 
     //Collection  
         collection.setPower(gamepad2.right_stick_y*-.9);
+    
+    if(gamepad2.a){
+        flip.setPosition(1);
+    }
+    if(gamepad2.x){
+        flip.setPosition(0);
+    }
     }
 
 
